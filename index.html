@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Livro de Aventuras — Salvador, Bahia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🌴</text></svg>">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .page-templates { display: none; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Livro de Aventuras — Salvador, Bahia</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🌴</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-templates {
+      display: none;
+    }
+  </style>
 </head>
+
 <body>
-    <!-- 
+  <!-- 
         GUIA DE EDIÇÃO ORIGINAL:
         1. CAPA: Linhas 45-50.
         2. PÁGINAS: Procure por "PÁGINA X" abaixo.
@@ -20,633 +27,712 @@
         4. TEXTOS: Altere o conteúdo entre as tags <p>, <em>, <div>, etc.
     -->
 
-    <div id="scene">
-        <div id="shell">
-            <div id="book">
-                <div id="lp"><div id="lc"></div></div>
-                <div id="sp"></div>
-                <div id="rp"><div id="rc"></div><div id="edges"></div></div>
-                <div id="flipper">
-                    <div class="ff"><div id="ffc"></div></div>
-                    <div class="fb2"><div id="fbc"></div></div>
-                </div>
-            </div>
-            <div id="cover" onclick="openBook()">
-                <div class="cvf">
-                    <div class="cv-bd"></div><div class="cv-bd2"></div>
-                    <div class="cv-sub">✈ Salvador · Bahia · Brasil</div>
-                    <div class="cv-tit">Nosso Livro<br>de <em>Aventuras</em></div>
-                    <div class="cv-dt">5 – 12 de Agosto de 2024</div>
-                    <div class="cv-fts">
-                        <div class="cfb" style="background:var(--am);width:38px"></div>
-                        <div class="cfb" style="background:var(--vd);width:54px"></div>
-                        <div class="cfb" style="background:var(--az);width:42px"></div>
-                        <div class="cfb" style="background:var(--vm);width:48px"></div>
-                        <div class="cfb" style="background:var(--ro);width:34px"></div>
-                    </div>
-                    <div class="cv-hint">▸ clique para abrir</div>
-                </div>
-                <div class="cvb"></div>
-            </div>
+  <div id="scene">
+    <div id="shell">
+      <div id="book">
+        <div id="lp">
+          <div id="lc"></div>
         </div>
+        <div id="sp"></div>
+        <div id="rp">
+          <div id="rc"></div>
+          <div id="edges"></div>
+        </div>
+        <div id="flipper">
+          <div class="ff">
+            <div id="ffc"></div>
+          </div>
+          <div class="fb2">
+            <div id="fbc"></div>
+          </div>
+        </div>
+      </div>
+      <div id="cover" onclick="openBook()">
+        <div class="cvf">
+          <div class="cv-bd"></div>
+          <div class="cv-bd2"></div>
+          <div class="cv-sub">✈ Salvador · Bahia · Brasil</div>
+          <div class="cv-tit">Nosso Livro<br>de <em>Aventuras</em></div>
+          <div class="cv-dt">5 – 12 de Agosto de 2024</div>
+          <div class="cv-fts">
+            <div class="cfb" style="background:var(--am);width:38px"></div>
+            <div class="cfb" style="background:var(--vd);width:54px"></div>
+            <div class="cfb" style="background:var(--az);width:42px"></div>
+            <div class="cfb" style="background:var(--vm);width:48px"></div>
+            <div class="cfb" style="background:var(--ro);width:34px"></div>
+          </div>
+          <div class="cv-hint">▸ clique para abrir</div>
+        </div>
+        <div class="cvb"></div>
+      </div>
+    </div>
+  </div>
+
+  <button class="arr" id="bp" onclick="turn(-1)" disabled>&#8249;</button>
+  <button class="arr" id="bn" onclick="turn(1)" disabled>&#8250;</button>
+  <button id="btn-close" onclick="closeBook()">✕ fechar livro</button>
+  <div id="ht">Salvador · Bahia · Agosto 2024</div>
+  <div id="hc2"></div>
+
+  <div class="page-templates">
+
+    <!-- PÁGINA 1 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--la)', 'var(--am)', 'var(--vd)', 'var(--az)', 'var(--ro)'))</script>
+        <div class="inn"
+          style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.48rem;text-align:center;height:100%;">
+          <div style="position:absolute;inset:0;opacity:.06;overflow:hidden;">
+            <script>document.write(S.azulejo)</script>
+          </div>
+          <div
+            style="font-family:'Caveat',cursive;font-size:.68rem;color:var(--la);border:1.5px solid var(--la);padding:2px 10px;letter-spacing:3px;text-transform:uppercase;position:relative;">
+            ✈ Agosto 2024</div>
+          <div
+            style="font-family:'Abril Fatface',serif;font-size:clamp(1.05rem,2.4vw,2rem);color:var(--ma);line-height:.94;position:relative;">
+            Nosso Livro<br>de <em style="color:var(--vm);">Aventuras</em></div>
+          <div
+            style="background:var(--az);color:var(--am);font-family:'Caveat',cursive;font-size:.75rem;font-weight:700;padding:3px 10px;letter-spacing:2px;position:relative;">
+            ✦ Salvador · Bahia ✦</div>
+          <div
+            style="font-style:italic;font-size:clamp(.58rem,.86vw,.73rem);color:var(--ma);opacity:.6;max-width:195px;line-height:1.5;position:relative;">
+            "As melhores aventuras são aquelas vividas com quem amamos"</div>
+          <div class="pol"
+            style="transform:rotate(-2deg);width:48%;max-width:155px;margin-top:.15rem;position:relative;">
+            <div class="pf"><img src="imagem/Nossa foto.jpg"></div>
+            <div class="pc">♥ nossa foto</div>
+          </div>
+          <div class="fitas" style="justify-content:center;position:relative;">
+            <div class="ft" style="background:var(--am);color:var(--ma);width:34px;"></div>
+            <div class="ft" style="background:var(--vd);width:44px;"></div>
+            <div class="ft" style="background:var(--az);width:34px;"></div>
+            <div class="ft" style="background:var(--vm);width:42px;"></div>
+            <div class="ft" style="background:var(--ro);width:30px;"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <button class="arr" id="bp" onclick="turn(-1)" disabled>&#8249;</button>
-    <button class="arr" id="bn" onclick="turn(1)"  disabled>&#8250;</button>
-    <button id="btn-close" onclick="closeBook()">✕ fechar livro</button>
-    <div id="ht">Salvador · Bahia · Agosto 2024</div>
-    <div id="hc2"></div>
+    <!-- PÁGINA 2 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--la)', 'var(--am)', 'var(--vd)', 'var(--az)'))</script>
+        <div class="tp" style="width:60px;top:11px;left:42px;transform:rotate(-3deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">5 de Agosto · Partida</div>
+          <div class="ptt">O <em>Começo</em></div>
+          <div class="ds">5 AGO</div>
+          <div class="pb">
+            <p>Saímos de Rolim juntos pela primeira vez, ainda meio sem acreditar que aquilo tava acontecendo de
+              verdade. O coração acelerado, as malas prontas e aquela sensação boa de que alguma coisa especial tava
+              começando.</p>
+            <p>A viagem até Cuiabá virou nosso aquecimento. A gente conversou sobre tudo e nada ao mesmo tempo, riu de
+              coisas bobas e ficou trocando aqueles olhares que falavam muito mais do que qualquer palavra.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <script>document.write(si('praia', 'margin-bottom:5px;'))</script>
+          <div class="g2" style="margin-top:4px;">
+            <div class="pol" style="transform:rotate(-3deg);">
+              <div class="pf"><img src="imagem/Virados.jpg"></div>
+              <div class="pc">05.ago.24</div>
+            </div>
+            <div class="pol" style="transform:rotate(2.5deg);margin-top:12px;">
+              <div class="pf"><img src="imagem/indoonibus.jpg"></div>
+              <div class="pc">cuiabá</div>
+            </div>
+          </div>
+          <div class="pb">
+            <br>
+            <p>Depois de algumas horas de estrada passando por Itamarati, o sono já começava a bater, mas a vontade de
+              aproveitar cada segundo juntos era maior. Entre conversas aleatórias, músicas tocando baixinho e risadas
+              sem sentido, a viagem foi ficando cada vez mais especial.</p>
+            <p>A verdade é que, antes mesmo de chegar em Cuiabá, eu já tinha percebido que o melhor da viagem nem era o
+              destino… era estar com você.</p>
+          </div>
+          <div class="sk" style="bottom:10px;right:11px;transform:rotate(4deg)">♥ a aventura começa</div>
+        </div>
 
-    <div class="page-templates">
+      </div>
+    </div>
+
+    <!-- PÁGINA 3 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--vd)', 'var(--am)', 'var(--la)', 'var(--ro)'))</script>
+        <div class="tp" style="width:68px;top:11px;right:28px;transform:rotate(4deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">5 Ago · Cuiabá</div>
+          <div class="ptt">Abrigo <em>Seguro</em></div>
+          <div class="ds">5 AGO</div>
+          <div class="pb">
+            <p>Quando chegamos em Cuiabá, parecia que a viagem tava começando de verdade. A gente desceu cansados da
+              estrada, mas ao mesmo tempo animados, falando toda hora sobre como seria quando finalmente chegássemos no
+              nosso destino.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <div class="glr" style="margin-top:.26rem;">
+            <div class="pol">
+              <div class="pf"><img src="imagem/Chagada em cuiaba.jpg"></div>
+              <div class="pc">escala</div>
+            </div>
+            <div class="pol" style="transform:rotate(-1.5deg);">
+              <div class="pf"><img src="imagem/Pegando voo.jpg"></div>
+              <div class="pc">antes</div>
+            </div>
+            <br>
+          </div>
+          <div class="pb">
+            <p>Antes de ir pro aeroporto, a gente ainda passou no shopping pra matar o tempo juntos. Andamos sem pressa,
+              comemos alguma coisa e aproveitamos aqueles momentos simples que acabam virando lembranças enormes depois.
+            </p>
+          </div>
+          <script>document.write(si('azulejo', 'margin-top:6px;opacity:.35;border-radius:3px;'))</script>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 4 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--az)', 'var(--am)', 'var(--vd)', ''))</script>
+        <div class="tp" style="width:56px;top:11px;left:20px;transform:rotate(-2deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">6 Ago · Primeiro Voo</div>
+          <div class="ptt">Rumo ao <em>Céu</em></div>
+          <div class="ds">6 AGO</div>
+          <div class="pb">
+            <p>Nosso primeiro voo juntos foi daquele jeito que a gente sonhava. Tiramos um monte de fotos, gravamos
+              vídeos, rimos de coisas bobas e ficamos o tempo todo olhando pela janela como duas crianças vivendo algo
+              novo.</p>
+            <p>O melhor era saber que a gente tava vivendo aquilo lado a lado. Entre uma foto e outra, conversas
+              baixinhas e aquele friozinho na barriga da viagem, o voo passou rápido até demais.</p>
+            <p>E enquanto Salvador ia chegando cada vez mais perto, a animação só aumentava. Parecia que a nossa
+              aventura tava finalmente começando de verdade.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <script>document.write(si('barco', 'margin-bottom:5px;opacity:.85;'))</script>
+          <div class="g2" style="margin-top:4px;">
+            <div class="pol" style="transform:rotate(-4deg);">
+              <div class="pf"><img src="imagem/Indo para Salvador.jpg"></div>
+              <div class="pc">entre nuvens</div>
+            </div>
+            <div class="pol" style="transform:rotate(3deg);margin-top:13px;">
+              <div class="pf"><img src="imagem/Foto no voo.jpg"></div>
+              <div class="pc">✈ voo</div>
+            </div>
+
+          </div>
+          <div class="sk" style="bottom:11px;right:13px;transform:rotate(-3deg)">Salvador nos espera ✈</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 5 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--vm)', 'var(--am)', 'var(--az)', ''))</script>
+        <div class="tp" style="width:62px;top:11px;right:26px;transform:rotate(5deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">6 Ago · Brasília · Escala</div>
+          <div class="ptt">Encontro <em>Mágico</em></div>
+          <div class="ds">6 AGO</div>
+          <div class="pb">
+            <p>A conexão em Brasília acabou virando uma lembrança engraçada da viagem. A gente ficou esperando um tempão
+              no aeroporto, andando de um lado pro outro, tentando passar o tempo e rindo do cansaço que já começava a
+              bater.</p>
+            <p>No meio disso tudo, apareceu o Superman por lá… e claro que eu fui tirar foto. Foi uma coisa simples,
+              aleatória e até meio boba, mas acabou deixando aquele momento mais divertido.</p>
+            <p>Essas horas “sem fazer nada” acabaram sendo especiais também. Porque no fim, não era só sobre chegar no
+              destino — era sobre viver cada pedacinho da viagem juntos.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <script>document.write(si('carnaval', 'margin-bottom:5px;border-radius:3px;'))</script>
+          <div class="g2" style="margin-top:4px;">
+            <div class="pol" style="transform:rotate(-2deg);">
+              <div class="pf"><img src="imagem/Superman.jpg"></div>
+              <div class="pc">herói encontrado</div>
+            </div>
+            <div class="pol" style="transform:rotate(3.5deg);margin-top:11px;">
+              <div class="pf"><img src="imagem/elalinda.jpg"></div>
+              <div class="pc">escala mágica</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 6 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--ro)', 'var(--am)', 'var(--la)', 'var(--vd)'))</script>
+        <div class="tp" style="width:56px;top:11px;left:38px;transform:rotate(-4deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">6 Ago · Chegada em Salvador</div>
+          <div class="ptt"><em>Primeira</em> Vista</div>
+          <div class="ds">6 AGO</div>
+          <div class="pb">
+            <p>O avião pousou e Salvador nos recebeu com todo o seu calor. A brisa vinha do mar e carregava sal, sol e
+              promessas. Olhamos um para o outro e sorrimos sem precisar dizer nada. Chegamos.</p>
+            <p>A cidade mais bonita do Brasil nos aguardava. E nós, de mão dada, fomos ao seu encontro.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <script>document.write(si('praia', 'margin-bottom:5px;opacity:.9;'))</script>
+          <div class="g3" style="margin-top:4px;">
+            <div class="pol" style="transform:rotate(-3deg);">
+              <div class="pf"><img src="imagem/primeirapaisagem.jpg"></div>
+              <div class="pc">chegamos!</div>
+            </div>
+            <div class="pol" style="transform:rotate(3deg);">
+              <div class="pf"><img src="imagem/Ela muito linda.jpg"></div>
+              <div class="pc">♥</div>
+            </div>
+            <div class="pol" style="margin-top:10px;">
+              <div class="pf"><img src="imagem/cidadelinda.jpg"></div>
+              <div class="pc">Salvador</div>
+            </div>
+    
+
+          </div>
+          <br>
+          <br>
+          <div class="pb">
+              <p>Você sempre teve vontade de conhecer a Bahia, a terra do seu pai, e estar ali finalmente vivendo isso junto com você deixou tudo ainda mais especial. Parecia que cada detalhe da cidade tinha um significado diferente pra você. Assim que saímos do aeroporto, sentimos o calor, a brisa diferente e aquela sensação boa de começo de aventura. A gente se olhou, sorriu sem falar nada e seguimos de mãos dadas, animados pra descobrir tudo que Salvador tinha guardado pra nós.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 7 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--ma)', 'var(--la)', 'var(--am)', ''))</script>
+        <div class="tp" style="width:60px;top:11px;right:34px;transform:rotate(2deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">7 Ago · Centro Histórico</div>
+          <div class="ptt">Labirinto <em>Urbano</em></div>
+          <div class="ds">7 AGO</div>
+          <script>document.write(si('pelo', 'margin-bottom:5px;'))</script>
+          <div class="pb">
+            <p>O centro de Salvador parecia um labirinto cheio de vida. A gente subia ladeiras, passava por ruas cheias de história, mercados movimentados e lugares que pareciam ter uma beleza diferente em cada esquina.</p>
+            <p>No meio disso tudo, escutando “familinha de mal humor” do guia, rindo por dentro das situações aleatórias e dos comentários que iam surgindo durante o caminho. Mesmo cansados em alguns momentos, tudo parecia bonito demais pra estragar o clima.</p>
+
+<p>E no fim, era exatamente isso que deixava tudo especial: andar sem pressa, se perder no meio das ruas, observar cada detalhe e viver aquela bagunça boa juntos.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <div class="glr" style="margin-top:.26rem;">
+            <div class="pol">
+              <div class="pf"><img src="imagem/Centro de Salvador.jpg"></div>
+              <div class="pc">centro de SSA</div>
+            </div>
+            <div class="pol" style="transform:rotate(3deg);">
+              <div class="pf"><img src="imagem/Elevador.jpg"></div>
+              <div class="pc">Elevador Lacerda</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 8 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--vd)', 'var(--am)', 'var(--la)', 'var(--az)'))</script>
+        <div class="tp" style="width:68px;top:11px;left:28px;transform:rotate(-3deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">7 Ago · Mercado Modelo</div>
+          <div class="ptt">Coração da <em>Cidade</em></div>
+          <div class="ds">7 AGO</div>
+          
+          <div class="dv"><span>✦</span></div>
+          <div class="g2" style="margin-top:.32rem;">
+            <div class="pol" style="transform:rotate(-3.5deg);">
+              <div class="pf"><img src="imagem/Mercado Modelo.jpg"></div>
+              <div class="pc">Mercado Modelo</div>
+            </div>
+            <div class="pol" style="transform:rotate(2.5deg);margin-top:13px;">
+              <div class="pf"><img src="imagem/Todos no mercado.jpg"></div>
+              <div class="pc">memória ♥</div>
+            </div>
+            
+          </div>
+          <br>
+          <div class="pb">
+            <p>Durante o passeio, a gente conheceu museus, andou pelo Mercado Modelo e foi descobrindo aos poucos toda a cultura e a história de Salvador. Cada lugar tinha um detalhe diferente, uma música tocando ao fundo, um cheiro de comida típica ou alguma coisa que fazia a gente parar pra observar.</p> <p>No mercado, caminhamos sem pressa entre as lojas, olhando artesanatos, lembrancinhas e tudo aquilo que deixava o lugar tão vivo. E claro que também aproveitamos pra experimentar a comida local, sentindo de verdade os sabores da Bahia pela primeira vez.</p> <p>Foi um daqueles dias simples, mas que ficam marcados justamente pelos pequenos momentos: andar juntos, descobrir coisas novas e viver tudo intensamente.</p>
+          </div>
+          <div class="sk" style="bottom:11px;right:13px;transform:rotate(-4deg)">tesouro da Bahia</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 9 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--az)', 'var(--am)', 'var(--vd)', ''))</script>
+        <div class="tp" style="width:50px;top:11px;right:38px;transform:rotate(-5deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">7 Ago · Elevador Lacerda</div>
+          <div class="ptt"><em>Elevação</em></div>
+          <div class="ds">7 AGO</div>
+          <script>document.write(si('elevador', 'margin-bottom:5px;'))</script>
+          
+          <div class="dv"><span>✦</span></div>
+          <div class="g2" style="margin-top:.26rem;">
+            <div class="pol" style="transform:rotate(-2deg);">
+              <div class="pf"><img src="imagem/Museu.jpg"></div>
+              <div class="pc">de um mundo ao outro</div>
+            </div>
+            <div class="pol" style="transform:rotate(3deg);margin-top:14px;">
+              <div class="pf"><img src="imagem/vista de cima.jpg"></div>
+              <div class="pc">vista do alto</div>
+            </div>
+          </div>
+          <br>
+          <div class="pb">
+            <p>Um dos lugares que mais chamou atenção foi o Elevador Lacerda. Além de toda a história e do movimento de turistas por todos os lados, a vista lá de cima era simplesmente absurda. A Baía de Todos os Santos parecia não ter fim, cheia de barcos, cores bonitas e aquele vento gostoso vindo do mar.</p> <p>A gente ficou um tempo só observando tudo, tirando fotos e aproveitando o momento. Salvador inteira parecia viva ali embaixo — cheia de música, gente, história e cultura em cada canto. Era impossível não ficar impressionado com tudo aquilo.</p> <p>E quanto mais a gente conhecia a cidade, mais dava vontade de continuar explorando cada pedacinho dela.</p>
+          </div>
+        </div>
         
-        <!-- PÁGINA 1 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--la)','var(--am)','var(--vd)','var(--az)','var(--ro)'))</script>
-                <div class="inn" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.48rem;text-align:center;height:100%;">
-                    <div style="position:absolute;inset:0;opacity:.06;overflow:hidden;"><script>document.write(S.azulejo)</script></div>
-                    <div style="font-family:'Caveat',cursive;font-size:.68rem;color:var(--la);border:1.5px solid var(--la);padding:2px 10px;letter-spacing:3px;text-transform:uppercase;position:relative;">✈ Agosto 2024</div>
-                    <div style="font-family:'Abril Fatface',serif;font-size:clamp(1.05rem,2.4vw,2rem);color:var(--ma);line-height:.94;position:relative;">Nosso Livro<br>de <em style="color:var(--vm);">Aventuras</em></div>
-                    <div style="background:var(--az);color:var(--am);font-family:'Caveat',cursive;font-size:.75rem;font-weight:700;padding:3px 10px;letter-spacing:2px;position:relative;">✦ Salvador · Bahia ✦</div>
-                    <div style="font-style:italic;font-size:clamp(.58rem,.86vw,.73rem);color:var(--ma);opacity:.6;max-width:195px;line-height:1.5;position:relative;">"As melhores aventuras são aquelas vividas com quem amamos"</div>
-                    <div class="pol" style="transform:rotate(-2deg);width:48%;max-width:155px;margin-top:.15rem;position:relative;">
-                        <div class="pf"><img src="imagem/Nossa foto.jpg"></div>
-                        <div class="pc">♥ nossa foto</div>
-                    </div>
-                    <div class="fitas" style="justify-content:center;position:relative;">
-                        <div class="ft" style="background:var(--am);color:var(--ma);width:34px;"></div>
-                        <div class="ft" style="background:var(--vd);width:44px;"></div>
-                        <div class="ft" style="background:var(--az);width:34px;"></div>
-                        <div class="ft" style="background:var(--vm);width:42px;"></div>
-                        <div class="ft" style="background:var(--ro);width:30px;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 2 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--la)','var(--am)','var(--vd)','var(--az)'))</script>
-                <div class="tp" style="width:60px;top:11px;left:42px;transform:rotate(-3deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">5 de Agosto · Partida</div>
-                    <div class="ptt">O <em>Começo</em></div>
-                    <div class="ds">5 AGO</div>
-                    <div class="pb">
-                        <p>Saímos do ônibus virado da exposição com o coração acelerado e a mala cheia de expectativas. Não tínhamos ideia de que estávamos escrevendo o primeiro capítulo de uma das histórias mais bonitas das nossas vidas.</p>
-                        <p>O caminho até Cuiabá foi o nosso aquecimento — conversas sem pressa, risadas sem motivo, olhares que diziam mais do que palavras.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <script>document.write(si('praia','margin-bottom:5px;'))</script>
-                    <div class="g2" style="margin-top:4px;">
-                        <div class="pol" style="transform:rotate(-3deg);">
-                            <div class="pf"><img src="imagem/Virados.jpg"></div>
-                            <div class="pc">05.ago.24</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(2.5deg);margin-top:12px;">
-                            <div class="pf"><img src="imagem/indoonibus.jpg"></div>
-                            <div class="pc">cuiabá</div>
-                        </div>
-                    </div>
-                    <div class="sk" style="bottom:10px;right:11px;transform:rotate(4deg)">♥ a aventura começa</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 3 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--vd)','var(--am)','var(--la)','var(--ro)'))</script>
-                <div class="tp" style="width:68px;top:11px;right:28px;transform:rotate(4deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">5 Ago · Cuiabá</div>
-                    <div class="ptt">Abrigo <em>Seguro</em></div>
-                    <div class="ds">5 AGO</div>
-                    <div class="pb">
-                        <p>Cuiabá nos recebeu como um abraço caloroso antes da grande travessia. A antecipação pairava no ar — aquela mistura boa de ansiedade e alegria que só as vésperas de grandes aventuras produzem.</p>
-                        <p>Descansamos, guardamos as forças. Amanhã, o céu nos esperava. Literalmente.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="glr" style="margin-top:.26rem;">
-                        <div class="pol">
-                            <div class="pf"><img src="imagem/Chagada em cuiaba.jpg"></div>
-                            <div class="pc">escala</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(-1.5deg);">
-                            <div class="pf"><img src="imagem/Pegando voo.jpg"></div>
-                            <div class="pc">antes</div>
-                        </div>
-                    </div>
-                    <script>document.write(si('azulejo','margin-top:6px;opacity:.35;border-radius:3px;'))</script>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 4 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--az)','var(--am)','var(--vd)',''))</script>
-                <div class="tp" style="width:56px;top:11px;left:20px;transform:rotate(-2deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">6 Ago · Primeiro Voo</div>
-                    <div class="ptt">Rumo ao <em>Céu</em></div>
-                    <div class="ds">6 AGO</div>
-                    <div class="pb">
-                        <p>Primeiro voo juntos. As nuvens pareciam um tapete branco estendido para nós. Olhei pela janela e pensei: isso é felicidade. Não o destino — mas este momento suspenso entre o céu e a terra, com você ao meu lado.</p>
-                        <p>Salvador nos chamava dourada e misteriosa. Descíamos em direção a ela como dois exploradores prontos para uma nova história.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <script>document.write(si('barco','margin-bottom:5px;opacity:.85;'))</script>
-                    <div class="g2" style="margin-top:4px;">
-                        <div class="pol" style="transform:rotate(-4deg);">
-                            <div class="pf"><img src="imagem/Indo para Salvador.jpg"></div>
-                            <div class="pc">entre nuvens</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(3deg);margin-top:13px;">
-                            <div class="pf"><img src="imagem/Foto no voo.jpg"></div>
-                            <div class="pc">✈ voo</div>
-                        </div>
-                  
-                    </div>
-                    <div class="sk" style="bottom:11px;right:13px;transform:rotate(-3deg)">Salvador nos espera ✈</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 5 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--vm)','var(--am)','var(--az)',''))</script>
-                <div class="tp" style="width:62px;top:11px;right:26px;transform:rotate(5deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">6 Ago · Brasília · Escala</div>
-                    <div class="ptt">Encontro <em>Mágico</em></div>
-                    <div class="ds">6 AGO</div>
-                    <div class="pb">
-                        <p>Brasília surgiu como capítulo inesperado — a escala que virou memória afetiva. As melhores histórias são as que não planejamos. O Superman estava lá. E nós, heróis da nossa própria aventura, registramos o encontro.</p>
-                        <p>Guardamos esse instante como um tesouro particular — aquele tipo de memória pequena e absurda que faz sorrir anos depois.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <script>document.write(si('carnaval','margin-bottom:5px;border-radius:3px;'))</script>
-                    <div class="g2" style="margin-top:4px;">
-                        <div class="pol" style="transform:rotate(-2deg);">
-                            <div class="pf"><img src="imagem/Superman.jpg"></div>
-                            <div class="pc">herói encontrado</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(3.5deg);margin-top:11px;">
-                            <div class="pf"><img src="imagem/elalinda.jpg"></div>
-                            <div class="pc">escala mágica</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 6 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--ro)','var(--am)','var(--la)','var(--vd)'))</script>
-                <div class="tp" style="width:56px;top:11px;left:38px;transform:rotate(-4deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">6 Ago · Chegada em Salvador</div>
-                    <div class="ptt"><em>Primeira</em> Vista</div>
-                    <div class="ds">6 AGO</div>
-                    <div class="pb">
-                        <p>O avião pousou e Salvador nos recebeu com todo o seu calor. A brisa vinha do mar e carregava sal, sol e promessas. Olhamos um para o outro e sorrimos sem precisar dizer nada. Chegamos.</p>
-                        <p>A cidade mais bonita do Brasil nos aguardava. E nós, de mão dada, fomos ao seu encontro.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <script>document.write(si('praia','margin-bottom:5px;opacity:.9;'))</script>
-                    <div class="g3" style="margin-top:4px;">
-                        <div class="pol" style="transform:rotate(-3deg);">
-                            <div class="pf"><img src="imagem/primeirapaisagem.jpg"></div>
-                            <div class="pc">chegamos!</div>
-                        </div>
-                        <div class="pol" style="margin-top:10px;">
-                            <div class="pf"><img src="imagem/cidadelinda.jpg"></div>
-                            <div class="pc">Salvador</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(3deg);">
-                            <div class="pf"><img src="foto6c.jpg"></div>
-                            <div class="pc">♥</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 7 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--ma)','var(--la)','var(--am)',''))</script>
-                <div class="tp" style="width:60px;top:11px;right:34px;transform:rotate(2deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">7 Ago · Centro Histórico</div>
-                    <div class="ptt">Labirinto <em>Urbano</em></div>
-                    <div class="ds">7 AGO</div>
-                    <script>document.write(si('pelo','margin-bottom:5px;'))</script>
-                    <div class="pb">
-                        <p>O centro de Salvador é um labirinto de ruas e séculos. Subimos ladeiras, encontramos becos com praças escondidas, atravessamos mercados que cheiravam a dendê.</p>
-                        <p>Nos perdemos várias vezes. E foi exatamente assim que nos encontramos mais — mais presentes, mais curiosos.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="glr" style="margin-top:.26rem;">
-                        <div class="pol">
-                            <div class="pf"><img src="foto7a.jpg"></div>
-                            <div class="pc">centro de SSA</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(3deg);">
-                            <div class="pf"><img src="foto7b.jpg"></div>
-                            <div class="pc">séculos</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 8 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--vd)','var(--am)','var(--la)','var(--az)'))</script>
-                <div class="tp" style="width:68px;top:11px;left:28px;transform:rotate(-3deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">7 Ago · Mercado Modelo</div>
-                    <div class="ptt">Coração da <em>Cidade</em></div>
-                    <div class="ds">7 AGO</div>
-                    <div class="pb">
-                        <p>O Mercado Modelo é onde o passado e o presente de Salvador se abraçam. Construído em 1861, já foi prisão e alfândega — hoje é o coração pulsante da cultura baiana, com artesanato, música e dendê em cada canto.</p>
-                        <p>Caminhamos devagar, tocando peças de barro, cheirando temperos. A Bahia inteira cabia naquele mercado.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="g2" style="margin-top:.32rem;">
-                        <div class="pol" style="transform:rotate(-3.5deg);">
-                            <div class="pf"><img src="foto8a.jpg"></div>
-                            <div class="pc">Mercado Modelo</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(2.5deg);margin-top:13px;">
-                            <div class="pf"><img src="foto8b.jpg"></div>
-                            <div class="pc">memória ♥</div>
-                        </div>
-                    </div>
-                    <div class="sk" style="bottom:11px;right:13px;transform:rotate(-4deg)">tesouro da Bahia</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 9 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--az)','var(--am)','var(--vd)',''))</script>
-                <div class="tp" style="width:50px;top:11px;right:38px;transform:rotate(-5deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">7 Ago · Elevador Lacerda</div>
-                    <div class="ptt"><em>Elevação</em></div>
-                    <div class="ds">7 AGO</div>
-                    <script>document.write(si('elevador','margin-bottom:5px;'))</script>
-                    <div class="pb">
-                        <p>72 metros em 30 segundos, de um mundo ao outro. Lá em cima, a Baía de Todos os Santos se espalhava até onde a vista alcançava: água azul-verde pontuada de ilhas e veleiros brancos.</p>
-                        <p>Ficamos em silêncio, olhando o horizonte. Às vezes a vida precisa de um elevador para lembrar que existem perspectivas muito mais amplas.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="g2" style="margin-top:.26rem;">
-                        <div class="pol" style="transform:rotate(-2deg);">
-                            <div class="pf"><img src="foto9a.jpg"></div>
-                            <div class="pc">de um mundo ao outro</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(3deg);margin-top:14px;">
-                            <div class="pf"><img src="foto9b.jpg"></div>
-                            <div class="pc">vista do alto</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 10 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--am)','var(--ro)','var(--la)','var(--az)'))</script>
-                <div class="tp" style="width:66px;top:11px;left:42px;transform:rotate(-2deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">7 Ago · Pelourinho</div>
-                    <div class="ptt">Ruas <em>Coloridas</em></div>
-                    <div class="ds">7 AGO</div>
-                    <script>document.write(si('pelo','margin-bottom:5px;'))</script>
-                    <div class="pb">
-                        <p>O Pelourinho é um poema escrito em pedra e cor. Casarões azuis, amarelos, vermelhos e rosas se acotovelam em ruas de paralelepípedo. Caminhamos ouvindo axé escapar pelas janelas.</p>
-                        <p>Você pegou minha mão e eu soube: este é um daqueles momentos que ficam para sempre.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="g3" style="margin-top:.26rem;">
-                        <div class="pol" style="transform:rotate(-4deg);">
-                            <div class="pf"><img src="foto10a.jpg"></div>
-                            <div class="pc">Pelourinho</div>
-                        </div>
-                        <div class="pol">
-                            <div class="pf"><img src="foto10b.jpg"></div>
-                            <div class="pc">cores da Bahia</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(3deg);margin-top:11px;">
-                            <div class="pf"><img src="foto10c.jpg"></div>
-                            <div class="pc">♥</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 11 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--la)','var(--am)','var(--ro)',''))</script>
-                <div class="tp" style="width:58px;top:11px;right:22px;transform:rotate(4deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">8 Ago · Praia ao Entardecer</div>
-                    <div class="ptt">Pôr do Sol <em>Perfeito</em></div>
-                    <div class="ds">8 AGO</div>
-                    <script>document.write(si('sunset','margin-bottom:5px;'))</script>
-                    <div class="pb">
-                        <p>O céu explodiu em rosa, vermelho e dourado sobre o mar calmo da Bahia. Paramos tudo para assistir. O sol mergulhou devagar, como se também não quisesse que aquele momento acabasse.</p>
-                        <p>Ficamos ali, lado a lado, sem dizer nada, guardando aquela luz dentro do peito. Aquele pôr do sol foi nosso.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="g2" style="margin-top:.26rem;">
-                        <div class="pol" style="transform:rotate(-3deg);">
-                            <div class="pf"><img src="foto11a.jpg"></div>
-                            <div class="pc">entardecer</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(2deg);margin-top:13px;">
-                            <div class="pf"><img src="foto11b.jpg"></div>
-                            <div class="pc">toda esperança ♥</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 12 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--az)','var(--ro)','var(--vm)',''))</script>
-                <div class="tp" style="width:64px;top:11px;left:24px;transform:rotate(-4deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">8 Ago · Salvador à Noite</div>
-                    <div class="ptt">Noite <em>Inesquecível</em></div>
-                    <div class="ds">8 AGO</div>
-                    <script>document.write(si('carnaval','margin-bottom:5px;border-radius:3px;'))</script>
-                    <div class="pb">
-                        <p>Salvador de noite é outra cidade — mais quente, mais musical, mais viva. Saímos sem planos e deixamos a noite nos guiar. Seguimos a música. Paramos onde a dança era mais bonita.</p>
-                        <p>Rimos até a barriga doer. Dançamos sem saber dançar. No final, caminhamos de volta naquele silêncio bom de quem não precisa dizer nada.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="g2" style="margin-top:.26rem;">
-                        <div class="pol" style="transform:rotate(-2deg);">
-                            <div class="pf"><img src="foto12a.jpg"></div>
-                            <div class="pc">luzes da cidade</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(4deg);margin-top:15px;">
-                            <div class="pf"><img src="foto12b.jpg"></div>
-                            <div class="pc">noite que não esquece</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 13 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--am)','var(--vd)','var(--az)','var(--vm)'))</script>
-                <div class="tp" style="width:55px;top:11px;right:34px;transform:rotate(-3deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">9 Ago · Igreja do Bonfim</div>
-                    <div class="ptt">Desejos <em>Amarrados</em></div>
-                    <div class="ds">9 AGO</div>
-                    <script>document.write(si('bonfim','margin-bottom:5px;'))</script>
-                    <div class="pb">
-                        <p>A Igreja do Bonfim é onde os sonhos ganham forma de fita colorida. Amarramos nossos pedidos no gradil sagrado com três nós, fazendo três desejos em silêncio. A tradição diz que quando a fita cair, os desejos se realizam.</p>
-                    </div>
-                    <div class="fitas" style="margin:.32rem 0;">
-                        <div class="ft" style="background:var(--am);color:var(--ma);width:46px;">Bonfim</div>
-                        <div class="ft" style="background:var(--vd);width:36px;">Fé</div>
-                        <div class="ft" style="background:var(--az);width:40px;">Amor</div>
-                    </div>
-                    <div class="pol" style="width:90%;">
-                        <div class="pf"><img src="foto13.jpg"></div>
-                        <div class="pc">nossos pedidos</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 14 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--la)','var(--ma)','var(--am)',''))</script>
-                <div class="tp" style="width:64px;top:11px;left:20px;transform:rotate(-3deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">9 Ago · Acarajé</div>
-                    <div class="ptt">Sabor <em>Autêntico</em></div>
-                    <div class="ds">9 AGO</div>
-                    <script>document.write(si('food','margin-bottom:5px;'))</script>
-                    <div class="pb">
-                        <p>O acarajé não é só comida — é cultura, resistência, história. Feito de feijão-fradinho frito no dendê, recheado com vatapá, caruru e camarão. Cada bolinho tem séculos de história africana impressos nele.</p>
-                        <p>Comemos na calçada, com as mãos, sem cerimônia. A refeição mais elegante é sempre a mais simples, em boa companhia.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="g2" style="margin-top:.26rem;">
-                        <div class="pol" style="transform:rotate(-2deg);">
-                            <div class="pf"><img src="foto14a.jpg"></div>
-                            <div class="pc">dendê e vatapá</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(3.5deg);margin-top:13px;">
-                            <div class="pf"><img src="foto14b.jpg"></div>
-                            <div class="pc">tradição baiana</div>
-                        </div>
-                    </div>
-                    <div class="sk" style="bottom:11px;right:13px;transform:rotate(3deg)">gosto de Bahia ♥</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 15 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--az)','var(--vd)','var(--am)',''))</script>
-                <div class="tp" style="width:56px;top:11px;right:28px;transform:rotate(3deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">10 Ago · Praia da Forte</div>
-                    <div class="ptt">Melhor <em>Companhia</em></div>
-                    <div class="ds">10 AGO</div>
-                    <script>document.write(si('praia','margin-bottom:5px;'))</script>
-                    <div class="pb">
-                        <p>Mar de um verde-azul transparente, recifes naturais que formam piscinas, areias brancas que doem os olhos. Ficamos horas simplesmente existindo ali — sem pressa, sem destino.</p>
-                        <p>A melhor paisagem ficava ao meu lado. Não era o mar — era você.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="g3" style="margin-top:.26rem;">
-                        <div class="pol" style="transform:rotate(-4deg);">
-                            <div class="pf"><img src="foto15a.jpg"></div>
-                            <div class="pc">paraíso</div>
-                        </div>
-                        <div class="pol" style="margin-top:8px;">
-                            <div class="pf"><img src="foto15b.jpg"></div>
-                            <div class="pc">felicidade</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(3deg);">
-                            <div class="pf"><img src="foto15c.jpg"></div>
-                            <div class="pc">transparente ♥</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 16 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--az)','var(--vd)','var(--az)',''))</script>
-                <div class="tp" style="width:60px;top:11px;left:31px;transform:rotate(-2deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">11 Ago · Baía de Todos os Santos</div>
-                    <div class="ptt">Navegando <em>Sonhos</em></div>
-                    <div class="ds">11 AGO</div>
-                    <script>document.write(si('barco','margin-bottom:5px;'))</script>
-                    <div class="pb">
-                        <p>A Baía de Todos os Santos — 1.100 km² de água salgada, 56 ilhas, histórias que remontam ao século XVI. Navegar por ali é atravessar páginas de um livro de história vivo.</p>
-                        <p>Golfinhos apareceram de repente e desapareceram. Você ficou olhando o mar com aquela expressão que nunca vou esquecer. E eu fiquei olhando para você.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="g2" style="margin-top:.26rem;">
-                        <div class="pol" style="transform:rotate(-3.5deg);">
-                            <div class="pf"><img src="foto16a.jpg"></div>
-                            <div class="pc">mar aberto</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(2deg);margin-top:13px;">
-                            <div class="pf"><img src="foto16b.jpg"></div>
-                            <div class="pc">sonhando ♥</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 17 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--la)','var(--ro)','var(--vm)',''))</script>
-                <div class="tp" style="width:54px;top:11px;right:33px;transform:rotate(-4deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">11 Ago · Pôr do Sol na Ilha</div>
-                    <div class="ptt">Magia no <em>Horizonte</em></div>
-                    <div class="ds">11 AGO</div>
-                    <script>document.write(si('sunset','margin-bottom:5px;'))</script>
-                    <div class="pb">
-                        <p>O céu virou uma paleta de artista: laranja queimado, rosa intenso, roxo profundo e, no centro, aquele dourado impossível. O capitão parou o barco. Todos ficaram em silêncio diante do espetáculo.</p>
-                        <p>O mundo havia sumido. Só existíamos nós dois e aquela luz impossível. Guardado como um tesouro que ninguém pode tirar de nós. Nunca.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="g2" style="margin-top:.26rem;">
-                        <div class="pol" style="transform:rotate(-2.5deg);">
-                            <div class="pf"><img src="foto17a.jpg"></div>
-                            <div class="pc">cores impossíveis</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(3deg);margin-top:13px;">
-                            <div class="pf"><img src="foto17b.jpg"></div>
-                            <div class="pc">guardado ♥</div>
-                        </div>
-                    </div>
-                    <div class="sk" style="bottom:11px;left:13px;transform:rotate(-3deg)">tesouro nosso</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 18 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--ro)','var(--vm)','var(--am)',''))</script>
-                <div class="tp" style="width:66px;top:11px;left:18px;transform:rotate(-2deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">12 Ago · Pizza de Mofongo</div>
-                    <div class="ptt">Última <em>Celebração</em></div>
-                    <div class="ds">12 AGO</div>
-                    <script>document.write(si('carnaval','margin-bottom:5px;border-radius:3px;opacity:.85;'))</script>
-                    <div class="pb">
-                        <p>Pizza de mofongo. Um nome estranho para um momento que virou lenda particular. Contamos as histórias da semana como se já fossem lendas antigas, rindo de detalhes que só faziam sentido para nós dois.</p>
-                        <p>Éramos dois celebrando algo que não precisava de motivo — só precisava de presença. E isso foi mais do que suficiente. Foi tudo.</p>
-                    </div>
-                    <div class="dv"><span>✦</span></div>
-                    <div class="g2" style="margin-top:.26rem;">
-                        <div class="pol" style="transform:rotate(-3deg);">
-                            <div class="pf"><img src="foto18a.jpg"></div>
-                            <div class="pc">última noite</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(3deg);margin-top:11px;">
-                            <div class="pf"><img src="foto18b.jpg"></div>
-                            <div class="pc">até a próxima ♥</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 19 -->
-        <div class="page-template">
-            <div class="pg">
-                <script>document.write(cb('var(--la)','var(--am)','var(--vd)','var(--az)'))</script>
-                <div class="tp" style="width:58px;top:11px;right:30px;transform:rotate(3deg)"></div>
-                <div class="inn" style="padding-top:17px;">
-                    <div class="ey">12 Ago · Retorno</div>
-                    <div class="ptt">Volta para <em>Casa</em></div>
-                    <div class="ds">12 AGO</div>
-                    <script>document.write(si('barco','margin-bottom:5px;opacity:.9;'))</script>
-                    <div class="pb">
-                        <p>As malas pesavam — não pela roupa, mas pelas memórias que tentávamos enfiar dentro delas. No aeroporto, olhei para você e pensei: a melhor parte de qualquer viagem é poder dividi-la com alguém.</p>
-                        <p>Voltamos diferentes. Mais ricos de momentos, de histórias, de um amor que provou ser a maior aventura de todas.</p>
-                    </div>
-                    <div class="fitas" style="margin:.28rem 0;">
-                        <div class="ft" style="background:var(--la);width:40px;">SSA</div>
-                        <div class="ft" style="background:var(--am);color:var(--ma);width:50px;">Memórias</div>
-                        <div class="ft" style="background:var(--vd);width:42px;">Amor</div>
-                    </div>
-                    <div class="g2">
-                        <div class="pol" style="transform:rotate(-2.5deg);">
-                            <div class="pf"><img src="foto19a.jpg"></div>
-                            <div class="pc">tchau Salvador</div>
-                        </div>
-                        <div class="pol" style="transform:rotate(2deg);margin-top:11px;">
-                            <div class="pf"><img src="foto19b.jpg"></div>
-                            <div class="pc">até a próxima ♥</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA 20 -->
-        <div class="page-template">
-            <div class="pg">
-                <div class="inn" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:.7rem;text-align:center;">
-                    <div style="position:absolute;inset:0;opacity:.07;overflow:hidden;"><script>document.write(S.azulejo)</script></div>
-                    <div style="font-family:'Abril Fatface',serif;font-size:2.6rem;color:var(--la);opacity:.15;line-height:1;position:relative;">FIM</div>
-                    <div style="position:relative;width:80%;"><script>document.write(si('praia','border-radius:4px;opacity:.72;'))</script></div>
-                    <div style="font-style:italic;font-size:.76rem;color:var(--ma);opacity:.5;max-width:195px;line-height:1.6;position:relative;">"Não viajamos para escapar da vida — viajamos para que a vida não escape de nós"</div>
-                    <div style="font-family:'Caveat',cursive;font-size:.72rem;color:var(--la);opacity:.35;letter-spacing:3px;position:relative;">SALVADOR · AGOSTO 2024</div>
-                    <div class="fitas" style="justify-content:center;opacity:.26;position:relative;">
-                        <div class="ft" style="background:var(--am);color:var(--ma);width:28px;"></div>
-                        <div class="ft" style="background:var(--vd);width:42px;"></div>
-                        <div class="ft" style="background:var(--az);width:28px;"></div>
-                        <div class="ft" style="background:var(--vm);width:38px;"></div>
-                        <div class="ft" style="background:var(--ro);width:30px;"></div>
-                    </div>
-                    <div style="font-family:'Caveat',cursive;font-size:.62rem;color:var(--ma);opacity:.22;position:relative;">♥ feito com amor e dendê ♥</div>
-                </div>
-            </div>
-        </div>
-
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- PÁGINA 10 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--am)', 'var(--ro)', 'var(--la)', 'var(--az)'))</script>
+        <div class="tp" style="width:66px;top:11px;left:42px;transform:rotate(-2deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">7 Ago · Pelourinho</div>
+          <div class="ptt">Ruas <em>Coloridas</em></div>
+          <div class="ds">7 AGO</div>
+          <script>document.write(si('pelo', 'margin-bottom:5px;'))</script>
+          <div class="pb">
+            <p>O Pelourinho parecia cenário de filme, cheio de cores, música e vida pra todo lado. Os casarões antigos, as ruas de pedra, o som vindo dos bares e das janelas… tudo deixava o lugar com uma energia impossível de explicar.</p>
+<p>E você ali no meio de tudo aquilo tava simplesmente a cara da Bahia. Parecia que combinava perfeitamente com o lugar, com o clima, com as cores e com aquela alegria leve que Salvador tem. Eu olhava pra você e parecia que a cidade inteira fazia ainda mais sentido.</p>
+<p>A gente caminhou devagar pelas ruas, tirando fotos, ouvindo música e aproveitando cada segundo daquele momento que, sinceramente, parecia bom demais pra acabar.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <div class="g3" style="margin-top:.26rem;">
+            <div class="pol" style="transform:rotate(-4deg);">
+              <div class="pf"><img src="imagem/Midia.jpg"></div>
+              <div class="pc">Pelourinho</div>
+            </div>
+            <div class="pol">
+              <div class="pf"><img src="imagem/Muito linda ela.jpg"></div>
+              <div class="pc">cores da Bahia</div>
+            </div>
+            <div class="pol" style="transform:rotate(3deg);margin-top:11px;">
+              <div class="pf"><img src="imagem/parece um quadro.jpg"></div>
+              <div class="pc">♥</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 11 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--la)', 'var(--am)', 'var(--ro)', ''))</script>
+        <div class="tp" style="width:58px;top:11px;right:22px;transform:rotate(4deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">8 Ago · Praia ao Entardecer</div>
+          <div class="ptt">Pôr do Sol <em>Perfeito</em></div>
+          <div class="ds">8 AGO</div>
+          <script>document.write(si('sunset', 'margin-bottom:5px;'))</script>
+          <div class="pb">
+            <p>Ir pra praia juntos pela primeira vez foi uma daquelas coisas simples que acabam virando memória pra sempre. A gente entrou no mar rindo, sentindo a água quente da Bahia e aproveitando aquele momento como duas crianças felizes por estarem vivendo tudo aquilo lado a lado.</p> <p>Passamos o dia curtindo a praia, tirando fotos, caminhando na areia e aproveitando cada segundo daquele lugar lindo. E quando o fim da tarde chegou, o céu começou a mudar de cor de um jeito absurdo.</p> <p>O pôr do sol parecia pintura. O céu ficou todo rosa, dourado e alaranjado refletindo no mar, enquanto a gente ficava ali sentado, só observando tudo acontecer devagar. Naquele momento, parecia que o tempo tinha parado só pra nós dois.</p> 
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <div class="g2" style="margin-top:.26rem;">
+            <div class="pol" style="transform:rotate(-3deg);">
+              <div class="pf"><img src="imagem/Praia.jpg"></div>
+              <div class="pc">entardecer</div>
+            </div>
+            <div class="pol" style="transform:rotate(2deg);margin-top:13px;">
+              <div class="pf"><img src="imagem/Final da tarde.jpg"></div>
+              <div class="pc">toda esperança ♥</div>
+            </div>
+          </div>
+          <br>
+          <div class="pb">
+            <p>E sinceramente… assistir aquele pôr do sol com você, depois de viver um dia tão especial juntos, foi uma daquelas lembranças que eu sei que vou guardar pra sempre.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 12 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--az)', 'var(--ro)', 'var(--vm)', ''))</script>
+        <div class="tp" style="width:64px;top:11px;left:24px;transform:rotate(-4deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">8 Ago · Salvador à Noite</div>
+          <div class="ptt">Noite <em>Inesquecível</em></div>
+          <div class="ds">8 AGO</div>
+          <script>document.write(si('carnaval', 'margin-bottom:5px;border-radius:3px;'))</script>
+          <div class="pb">
+            <p>Salvador de noite tinha uma energia completamente diferente. As ruas cheias, música tocando em vários lugares, o povo animado e aquela sensação de que a cidade nunca dormia deixavam tudo ainda mais bonito.</p> <p>A gente saiu sem muito plano, só querendo aproveitar a noite e descobrir o que aparecesse pelo caminho. E foi exatamente isso que deixou tudo tão divertido. Cada lugar tinha gente sorrindo, dançando, conversando alto e vivendo o momento como se não existisse amanhã.</p> <p>Também aproveitamos pra experimentar várias comidas diferentes. Provamos sabores novos, comidas típicas e até polvo a gente comeu. Era engraçado ver a gente tentando descobrir se gostava ou não de algumas coisas, mas no fim tudo virava risada e história pra contar.</p> <p>E entre música, caminhada, comida boa e aquela cidade linda iluminada à noite, a gente foi vivendo mais um daqueles momentos que fizeram a viagem ficar ainda mais especial.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <div class="g2" style="margin-top:.26rem;">
+            <div class="pol" style="transform:rotate(-2deg);">
+              <div class="pf"><img src="imagem/A noite.jpg"></div>
+              <div class="pc">luzes da cidade</div>
+            </div>
+            <div class="pol" style="transform:rotate(4deg);margin-top:15px;">
+              <div class="pf"><img src="imagem/Comida.jpg"></div>
+              <div class="pc">noite que não esquece</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 13 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--am)', 'var(--vd)', 'var(--az)', 'var(--vm)'))</script>
+        <div class="tp" style="width:55px;top:11px;right:34px;transform:rotate(-3deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">9 Ago · Igreja do Bonfim</div>
+          <div class="ptt">Desejos <em>Amarrados</em></div>
+          <div class="ds">9 AGO</div>
+          <script>document.write(si('bonfim', 'margin-bottom:5px;'))</script>
+          <div class="pb">
+            <p>As igrejas de Salvador tinham uma beleza diferente de tudo que a gente já tinha visto. Cada detalhe parecia cheio de história, desde a arquitetura enorme até o clima de fé que existia em volta de tudo. E o mais bonito era perceber como a cidade misturava o catolicismo com o axé, com as cores, a música e toda aquela cultura baiana tão viva.</p> <p>Na Igreja do Bonfim, as fitinhas coloridas espalhadas por todos os lados deixavam o lugar ainda mais especial. A gente amarrou nossos pedidos em silêncio, vivendo aquele momento simples, mas cheio de significado.</p> <p>E sinceramente… você naquele lugar tava chamando atenção sem nem perceber. Parecia que combinava perfeitamente com Salvador — linda, leve e cheia de vida no meio de toda aquela mistura de cores, história e energia boa.</p> <p>Foi impossível não parar alguns segundos só pra observar tudo: a igreja, a cidade, as pessoas… e você ali no meio de tudo isso deixando aquele momento ainda mais bonito.</p>
+          </div>
+          <div class="fitas" style="margin:.32rem 0;">
+            <div class="ft" style="background:var(--am);color:var(--ma);width:46px;">Bonfim</div>
+            <div class="ft" style="background:var(--vd);width:36px;">Fé</div>
+            <div class="ft" style="background:var(--az);width:40px;">Amor</div>
+          </div>
+          <div class="pol" style="width:90%;">
+            <div class="pf"><img src="imagem/igreja.jpg"></div>
+            <div class="pc">nossos pedidos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 14 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--la)', 'var(--ma)', 'var(--am)', ''))</script>
+        <div class="tp" style="width:64px;top:11px;left:20px;transform:rotate(-3deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">9 Ago · Acarajé</div>
+          <div class="ptt">Sabor <em>Autêntico</em></div>
+          <div class="ds">9 AGO</div>
+          <script>document.write(si('food', 'margin-bottom:5px;'))</script>
+          <div class="pb">
+            <p>O acarajé que a gente comeu foi uma experiência por si só. Paramos num dos lugares mais duvidosos possíveis, ali do lado do “Baú”, com aquele movimento típico da Bahia acontecendo em volta, gente falando alto, música tocando e aquele cheiro forte de dendê no ar.</p> <p>E o melhor era o jeito do pessoal falando. O sotaque baiano deixava tudo mais engraçado e acolhedor ao mesmo tempo. A gente quase se perdia tentando entender algumas coisas, mas acabava rindo junto de tudo.</p> <p>Quando o acarajé chegou, a gente até assustou. O negócio era gigante. Muito maior do que imaginávamos. E mesmo sem saber direito como comer aquilo sem fazer bagunça, a gente foi tentando do nosso jeito, sentado ali mesmo, no meio da rua, aproveitando o momento.</p> <p>No fim, acabou virando uma das lembranças mais marcantes da viagem. Porque não era só sobre a comida — era sobre viver aquela experiência do jeito mais verdadeiro possível, juntos, no meio daquela bagunça boa que só Salvador consegue ter.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <div class="g2" style="margin-top:.26rem;">
+            <div class="pol" style="transform:rotate(-2deg);">
+              <div class="pf"><img src="imagem/aCAREJE.jpg"></div>
+              <div class="pc">dendê e vatapá</div>
+            </div>
+            <div class="pol" style="transform:rotate(3.5deg);margin-top:13px;">
+              <div class="pf"><img src="imagem/nOS.jpg"></div>
+              <div class="pc">tradição baiana</div>
+            </div>
+          </div>
+          <div class="sk" style="bottom:11px;right:13px;transform:rotate(3deg)">gosto de Bahia ♥</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 15 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--az)', 'var(--vd)', 'var(--am)', ''))</script>
+        <div class="tp" style="width:56px;top:11px;right:28px;transform:rotate(3deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">10 Ago · Praia da Forte</div>
+          <div class="ptt">Melhor <em>Companhia</em></div>
+          <div class="ds">10 AGO</div>
+          <script>document.write(si('praia', 'margin-bottom:5px;'))</script>
+          <div class="pb">
+           <p>Te ver ali comigo, vivendo tudo aquilo, só me fazia ter mais certeza do quanto eu amo você. Cada momento da viagem parecia ficar mais especial simplesmente porque era ao seu lado.</p> <p>E teve aquele lugar da muqueca de camarão… sinceramente, eu acho que nunca vou esquecer. O clima do lugar, a comida chegando quente na mesa, o cheiro absurdo, a gente cansado da praia mas feliz demais por estar ali. Foi um daqueles momentos simples que acabam ficando marcados pra sempre na memória.</p> <p>Enquanto a gente comia e conversava sem pressa, olhando aquele mar lindo na frente da gente, eu fiquei pensando em como queria viver muitos outros momentos assim com você. Voltar naquele lugar, sentar na mesma mesa e sentir tudo de novo.</p> <p>Porque no fim, por mais bonito que fosse o mar, a praia ou a viagem inteira… a melhor parte sempre era você ali comigo.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <div class="g3" style="margin-top:.26rem;">
+            <div class="pol" style="transform:rotate(3deg);">
+              <div class="pf"><img src="imagem/Transparencia.jpg"></div>
+              <div class="pc">Meu amor ♥</div>
+            </div>
+            <div class="pol" style="transform:rotate(-4deg);">
+              <div class="pf"><img src="imagem/Nascer do sol.jpg"></div>
+              <div class="pc">paraíso</div>
+            </div>
+
+            <div class="pol" style="margin-top:8px;">
+              <div class="pf"><img src="imagem/Nos na igreja.jpg"></div>
+              <div class="pc">felicidade</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 16 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--az)', 'var(--vd)', 'var(--az)', ''))</script>
+        <div class="tp" style="width:60px;top:11px;left:31px;transform:rotate(-2deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">11 Ago · Baía de Todos os Santos</div>
+          <div class="ptt">Navegando <em>Sonhos</em></div>
+          <div class="ds">11 AGO</div>
+          <script>document.write(si('barco', 'margin-bottom:5px;'))</script>
+          <div class="pb">
+            <p>O passeio até a Ilha de Itaparica foi uma das partes mais bonitas da viagem. Ver aquele mar enorme, o vento batendo no rosto e a imensidão da Baía de Todos os Santos fez tudo parecer ainda mais especial.</p> <p>Durante o caminho, a gente ficou admirando a paisagem, tirando fotos e aproveitando cada segundo daquele momento. E eu nunca vou esquecer da forma como você olhava pro mar, completamente encantada com tudo aquilo. Era impossível não parar pra te observar também.</p> <p>A Ilha de Itaparica tinha aquele clima leve, tranquilo e bonito que fazia a gente querer esquecer da hora e só aproveitar. E no meio daquele cenário incrível, eu só conseguia pensar no quanto aquela viagem tava sendo perfeita por ter você comigo.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <div class="g2" style="margin-top:.26rem;">
+            <div class="pol" style="transform:rotate(-3.5deg);">
+              <div class="pf"><img src="imagem/Navegando.jpg"></div>
+              <div class="pc">mar aberto</div>
+            </div>
+            <div class="pol" style="transform:rotate(2deg);margin-top:13px;">
+              <div class="pf"><img src="imagem/Pordosol no Barco.jpg"></div>
+              <div class="pc">sonhando ♥</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 17 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--la)', 'var(--ro)', 'var(--vm)', ''))</script>
+        <div class="tp" style="width:54px;top:11px;right:33px;transform:rotate(-4deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">11 Ago · Pôr do Sol na Ilha</div>
+          <div class="ptt">Magia no <em>Horizonte</em></div>
+          <div class="ds">11 AGO</div>
+          <script>document.write(si('sunset', 'margin-bottom:5px;'))</script>
+          <div class="pb">
+            <p>O passeio de barco saindo ali perto do Mercado Modelo foi uma daquelas experiências que parecem boas demais pra serem reais. Desde o começo já tava tudo incrível — o vento batendo, o mar lindo e aquela sensação gostosa de estar vivendo algo especial ao seu lado.</p> <p>Durante o caminho até a ilha, parecia que todo mundo tava feliz junto. Música tocando, o pessoal animado e aquele clima leve que fez o passeio ficar ainda melhor. E quando começaram a cantar parabéns no barco, tudo ficou ainda mais marcante e divertido. Foi impossível não sorrir olhando pra você ali, aproveitando cada segundo.</p> <p>A ilha era linda, o mar parecia piscina e o tempo simplesmente passou rápido demais. Mas acho que o que mais ficou guardado foi a sensação de estar vivendo aquilo com você. Porque qualquer lugar se tornava inesquecível quando você tava comigo.</p> <p>E no fim da tarde, vendo o céu mudar de cor no meio do mar, eu só conseguia pensar no quanto aquele passeio tinha sido perfeito. Um daqueles momentos que eu queria poder reviver mil vezes ao seu lado.</p>
+          </div>
+          <div class="dv"><span>✦</span></div>
+          <div class="g2" style="margin-top:.26rem;">
+            <div class="pol" style="transform:rotate(-2.5deg);">
+              <div class="pf"><img src="imagem/cidadelinda.jpg"></div>
+              <div class="pc">cores impossíveis</div>
+            </div>
+            <div class="pol" style="transform:rotate(3deg);margin-top:13px;">
+              <div class="pf"><img src="imagem/Nos na praia 2.jpg"></div>
+              <div class="pc">guardado ♥</div>
+            </div>
+          </div>
+          <div class="sk" style="bottom:11px;left:13px;transform:rotate(-3deg)">tesouro nosso</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 18 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--ro)', 'var(--vm)', 'var(--am)', ''))</script>
+        <div class="tp" style="width:66px;top:11px;left:18px;transform:rotate(-2deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">12 Ago · Pizza de Mofongo</div>
+          <div class="ptt">Última <em>Celebração</em></div>
+          <div class="ds">12 AGO</div>
+          <script>document.write(si('carnaval', 'margin-bottom:5px;border-radius:3px;opacity:.85;'))</script>
+          
+          <div class="dv"><span>✦</span></div>
+          <div class="g2" style="margin-top:.26rem;">
+            <div class="pol" style="transform:rotate(-3deg);">
+              <div class="pf"><img src="imagem/Praia (2).jpg"></div>
+              <div class="pc">Na praia</div>
+            </div>
+            <div class="pol" style="transform:rotate(3deg);margin-top:11px;">
+              <div class="pf"><img src="imagem/Bem bonitps.jpg"></div>
+              <div class="pc">até a próxima ♥</div>
+            </div>
+          </div>
+          <br>
+          <div class="pb">
+            <p>Depois de mais um dia inteiro na praia, cansados mas felizes, a gente voltou naquele lugar da Bobó de camarão que já tinha virado um dos nossos preferidos da viagem. Comer ali de novo trouxe aquela sensação boa de “quero guardar esse momento pra sempre”.</p> <p>Mais tarde, mesmo mortos de cansados, ainda fomos jogar boliche pra aproveitar nossa última noite antes da viagem de volta. E claro que tinha que acontecer alguma coisa pra virar história depois: a tal da pizza “mofada”. Na hora foi um estresse, porque ninguém merecia aquilo logo no fim da viagem, mas depois acabou virando motivo de risada entre a gente.</p> <p>No final, mesmo com os pequenos perrengues, tudo ficou leve de novo. Porque era sempre assim: bastava a gente parar, conversar e rir juntos que qualquer coisa ruim perdia a importância.</p> <p>E olhando pra trás, acho que essa foi a melhor parte da viagem inteira — não ter vivido tudo perfeito, mas ter vivido tudo juntos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 19 -->
+    <div class="page-template">
+      <div class="pg">
+        <script>document.write(cb('var(--la)', 'var(--am)', 'var(--vd)', 'var(--az)'))</script>
+        <div class="tp" style="width:58px;top:11px;right:30px;transform:rotate(3deg)"></div>
+        <div class="inn" style="padding-top:17px;">
+          <div class="ey">12 Ago · Retorno</div>
+          <div class="ptt">Volta para <em>Casa</em></div>
+          <div class="ds">12 AGO</div>
+          <script>document.write(si('barco', 'margin-bottom:5px;opacity:.9;'))</script>
+          <div class="pb">
+            <p>Quando chegou a hora de voltar pra Rondônia, bateu aquela mistura estranha de cansaço, saudade e vontade de ficar só mais um pouquinho. Parecia que a viagem tinha passado rápido demais, mesmo depois de tudo que a gente viveu.</p> <p>No aeroporto, enquanto esperávamos o voo, eu fiquei lembrando de cada momento: a estrada saindo de Rolim, a conexão em Brasília, o primeiro voo juntos, as praias, o Pelourinho, a Bobó, o acarajé gigante, o passeio de barco, as risadas, os pequenos estresses e todas as coisas simples que fizeram essa viagem ser tão especial.</p> <p>E no meio de tudo isso, uma coisa ficou muito clara pra mim: não era só Salvador que tinha tornado tudo inesquecível. Era você. Porque qualquer lugar ao seu lado ganhava uma sensação diferente, mais leve, mais feliz, mais viva.</p> <p>Voltamos pra Rondônia trazendo muito mais do que fotos e lembranças. Voltamos com histórias que sempre vão fazer a gente sorrir quando lembrar, com memórias que eu sei que vou guardar pra sempre e com ainda mais vontade de viver o mundo inteiro ao seu lado.</p> <p>Se essa viagem teve uma certeza, foi essa: os melhores momentos da minha vida sempre vão ser aqueles em que eu estiver com você.</p>
+          </div>
+          <div class="fitas" style="margin:.28rem 0;">
+            <div class="ft" style="background:var(--la);width:40px;">SSA</div>
+            <div class="ft" style="background:var(--am);color:var(--ma);width:50px;">Memórias</div>
+            <div class="ft" style="background:var(--vd);width:42px;">Amor</div>
+          </div>
+          <div class="g2">
+            <div class="pol" style="transform:rotate(-2.5deg);">
+              <div class="pf"><img src="imagem/Voltando no voo.jpg"></div>
+              <div class="pc">tchau Salvador</div>
+            </div>
+            <div class="pol" style="transform:rotate(2deg);margin-top:11px;">
+              <div class="pf"><img src="imagem/Voltando no onibus.jpg"></div>
+              <div class="pc">até a próxima ♥</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 20 -->
+    <div class="page-template">
+      <div class="pg">
+        <div class="inn"
+          style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:.7rem;text-align:center;">
+          <div style="position:absolute;inset:0;opacity:.07;overflow:hidden;">
+            <script>document.write(S.azulejo)</script>
+          </div>
+          <div
+            style="font-family:'Abril Fatface',serif;font-size:2.6rem;color:var(--la);opacity:.15;line-height:1;position:relative;">
+            FIM</div>
+          <div style="position:relative;width:80%;">
+            <script>document.write(si('praia', 'border-radius:4px;opacity:.72;'))</script>
+          </div>
+          <div
+            style="font-style:italic;font-size:.76rem;color:var(--ma);opacity:.5;max-width:195px;line-height:1.6;position:relative;">
+            "Não viajamos para escapar da vida — viajamos para que a vida não escape de nós"</div>
+          <div
+            style="font-family:'Caveat',cursive;font-size:.72rem;color:var(--la);opacity:.35;letter-spacing:3px;position:relative;">
+            SALVADOR · AGOSTO 2024</div>
+          <div class="fitas" style="justify-content:center;opacity:.26;position:relative;">
+            <div class="ft" style="background:var(--am);color:var(--ma);width:28px;"></div>
+            <div class="ft" style="background:var(--vd);width:42px;"></div>
+            <div class="ft" style="background:var(--az);width:28px;"></div>
+            <div class="ft" style="background:var(--vm);width:38px;"></div>
+            <div class="ft" style="background:var(--ro);width:30px;"></div>
+          </div>
+          <div style="font-family:'Caveat',cursive;font-size:.62rem;color:var(--ma);opacity:.22;position:relative;">♥
+            feito com amor e dendê ♥</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
